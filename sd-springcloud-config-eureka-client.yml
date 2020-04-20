@@ -1,5 +1,14 @@
-server:
-  port: 7001
+spring: 
+  profiles: 
+    active: 
+    - dev
+---
+server: 
+  port: 7001 #注册中心占用7001端口,冒号后面必须要有空格
+spring: 
+  profiles: dev
+  application:
+    name: sd-springcloud-config-eureka-client 
 eureka:
 #  server:
 #    enable-replicated-request-compression: false  #是否开启eureka的自我保护机制  默认是开启的
@@ -12,3 +21,25 @@ eureka:
     service-url:
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #设置与Eureka Server交互的地址查询服务与注册服务
       defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #eureka集群
+      
+---
+server: 
+  port: 7001 #注册中心占用7001端口,冒号后面必须要有空格
+spring: 
+  profiles: test
+  application:
+    name: sd-springcloud-config-eureka-client 
+eureka:
+#  server:
+#    enable-replicated-request-compression: false  #是否开启eureka的自我保护机制  默认是开启的
+  instance:
+#    hostname: 127.0.0.1  #eureka服务端的实例名称
+    hostname: eureka7001.com  #eureka服务端的实例名称(本地域名映射--用于测试集群)
+  client:
+    register-with-eureka: false   #false表示不想注册中心注册自己
+    fetch-registry: false   #false表示自己端就是服务中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #设置与Eureka Server交互的地址查询服务与注册服务
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #eureka集群
+   
+
