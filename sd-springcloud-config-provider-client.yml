@@ -36,7 +36,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource    #当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
-    url: jdbc:mysql://47.106.196.94:3306/dian?useUnicode=true&characterEncoding=utf-8&useSSL=false       #链接地址，数据库名称
+    url: jdbc:mysql://47.106.196.94:3306/dian_prod?useUnicode=true&characterEncoding=utf-8&useSSL=false       #链接地址，数据库名称
     username: root
     password: Midian0612***
     dbcp2:
