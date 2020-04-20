@@ -52,11 +52,11 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
 #    instance-id: sd-springcloud-8001   # 微服务别名
-    instance-id: sd-springcloud-8001-hystrix   # 微服务别名
+    instance-id: sd-springcloud-config-provider-client   # 微服务别名
     prefer-ip-address: true  #访问路径可以显示ip
 
 info:
-  app.name: sd-springcloud
+  app.name: sd-springcloud-config-provider-client
   company.name: www.shuaidian.top
   build.artifactId: $project.artifactId$
   build.version: $project.version$
@@ -106,11 +106,11 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
 #    instance-id: sd-springcloud-8001   # 微服务别名
-    instance-id: sd-springcloud-8001-hystrix   # 微服务别名
+    instance-id: sd-springcloud-config-provider-client  # 微服务别名
     prefer-ip-address: true  #访问路径可以显示ip
 
 info:
-  app.name: sd-springcloud
+  app.name: sd-springcloud-config-provider-client
   company.name: www.shuaidian.top
   build.artifactId: $project.artifactId$
   build.version: $project.version$
